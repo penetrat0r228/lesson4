@@ -4,13 +4,60 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input[type="text"]
+        {
+            width: 200px;
+            height: 50px;
+            border: 2px solid brown;
+            border-radius: 3px;
+            background-color: grey;
+            color: red;
+            text-overflow: ellipsis;
+
+        }
+        input[type="text"]::placeholder{
+            color: darkseagreen;
+        }
+        input[type="text"]:focus{
+            /*background-color: black;*/
+            outline: none;
+            border: 2px solid pink;
+        }
         label{
             display: block;
+            margin: 10px 0;
         }
         sup{
             color: red;
         }
+        textarea{
+            width: 200px;
+            height: 50px;
+            resize: none;
+        }
+        input[type="checkbox"]{
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1px solid purple;
+            border-radius: 4px;
+            margin: -2px;
+        }
+        input[type="checkbox"]:checked{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO2UuQ0AIQwEHbkMOqANarqC3YcRgROiQyCtBTuS4x0/IELIT6xUXym5RsAWg4+LGErANoO3RYwChSuoPEKHPsPg3Z9wBhacRiCABacRCGDBaQQG2j4fJSiUAg20An129Hpj5x0hJqF/Zt+KfwAAAABJRU5ErkJggg==);
+            background-size: cover;
+        }
+
     </style>
+
+
+
 </head>
 <body>
     <form>
@@ -23,8 +70,33 @@
         <label for="age">age:</label>
         <input type="number" name="age" id="age" min="18" max="99">
 
-        
+        <label>Стать</label>
+        <label> <input type="radio" name="gender" value="male">Чоловіча</label>
+        <label> <input type="radio" name="gender" value="female">Жіноча</label>
 
+
+        <label>
+            <input type="checkbox"name="news"> Підписатись на новини
+        </label>
+        <select>
+            <optgroup label="группа 1">
+                <option>Варіант1</option>
+                <option>Варіант2</option>
+                <option>Варіант3</option>
+            </optgroup>
+            <optgroup label="группа 2">
+                <option>Варіант1</option>
+                <option>Варіант2</option>
+                <option>Варіант3</option>
+            </optgroup>
+        </select>
+
+        <label for="text">введіть коментар</label>
+        <textarea id="text"></textarea>
+
+        <br>
+        <input type="submit" value="press">
+        <input type="reset">
 
     </form>
 
